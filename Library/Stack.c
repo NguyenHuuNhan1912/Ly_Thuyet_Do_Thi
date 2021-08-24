@@ -1,4 +1,5 @@
 //Thu vien ngan xep (Stack)
+
 #include <stdio.h>
 #define MAX 100
 //Khai bao cau truc ngan xep
