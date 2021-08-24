@@ -1,4 +1,4 @@
-//Thu vien danh sach(List library)
+//Thu vien danh sach (List library)
 #include <stdio.h>
 #define idx 100
 //Khai bao cau truc danh sach(List)
