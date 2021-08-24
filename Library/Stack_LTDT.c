@@ -18,6 +18,7 @@ void push_Stack(Stack *s, int element){
 int get_Stack(Stack *s){
     return s->data[s->size-1];
 }
+
 void delete_size(Stack *s){
     s->size--;
 }
