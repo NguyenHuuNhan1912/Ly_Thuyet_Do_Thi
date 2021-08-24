@@ -1,4 +1,4 @@
-//Thu vien hang doi (Queue) (FIFO/LILO)
+//Thu vien hang doi (Queue)(FIFO/LILO)
 #include <stdio.h>
 #include <stdbool.h>
 #define idx 100
