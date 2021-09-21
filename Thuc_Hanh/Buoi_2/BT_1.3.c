@@ -32,7 +32,6 @@ Có thể sử dụng đoạn chương trình đọc dữ liệu mẫu sau đây
 	int n, m, u, v, w, e;
 	scanf("%d%d", &n, &m);
 	init_graph(&G, n);
-	
 	for (e = 0; e < m; e++) {
 		scanf("%d%d", &u, &v);
 		add_edge(&G, u, v);
