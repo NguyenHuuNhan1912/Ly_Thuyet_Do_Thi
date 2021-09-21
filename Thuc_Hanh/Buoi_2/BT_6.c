@@ -31,6 +31,7 @@ Với ví dụ 2, ta có dữ liệu:
 1 2
 3 2
 2 3
+
 Viết chương trình đọc dữ liệu các thức uống và kiểm tra xem Haddock có thể say không. Nếu có in ra “YES”, ngược lại in ra “NO”.
 
 Đầu vào (Input):
