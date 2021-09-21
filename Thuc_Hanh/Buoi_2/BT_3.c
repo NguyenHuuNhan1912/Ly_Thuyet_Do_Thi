@@ -16,7 +16,6 @@ Dữ liệu đầu vào được nhập từ bàn phím với định dạng:
 Nếu có thể đi được in ra màn hình YES, ngược lại in ra NO.
 
 Xem thêm ví dụ bên dưới.
-
 For example:
 
 Input	Result
