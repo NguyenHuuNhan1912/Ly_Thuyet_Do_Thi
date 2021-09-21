@@ -29,8 +29,6 @@ In ra màn hình OKIE nếu các con đường của thành phố có thoả mã
 
 Xem thêm ví dụ bên dưới.
 
-
-
 Gợi ý:
 
 Xây dựng đồ thị có hướng từ dữ liệu các con đường và các địa điểm
