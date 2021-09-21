@@ -17,7 +17,6 @@ void init_graph(Graph* G, int n){
 	G->m = 0;
 }
 
-
 Viết hàm add_edge(Graph* G, int x, int y) để thêm cung (x, y) vào đồ thị G.
 
 void add_edge(Graph* G, int x, int y) {
