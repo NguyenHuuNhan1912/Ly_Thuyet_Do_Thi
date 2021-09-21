@@ -49,7 +49,6 @@ Có thể sử dụng đoạn chương trình đọc dữ liệu mẫu sau đây
 #include <stdio.h>
 #define maxv 50
 #define idx 100
-
 typedef struct{
     int matrix[maxv][maxv];
     int n;
