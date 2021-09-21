@@ -17,8 +17,6 @@ In ra màn hình strong connected nếu đồ thị đã cho liên thông mạnh
 
 Xem thêm ví dụ bên dưới.
 
-
-
 Hướng dẫn đọc dữ liệu và chạy thử chương trình
 
 Để chạy thử chương trình, bạn nên tạo một tập tin dt.txt chứa đồ thị cần kiểm tra.
