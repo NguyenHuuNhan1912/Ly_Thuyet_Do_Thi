@@ -7,7 +7,6 @@ Quy ước:
 
 Các đỉnh kề của 1 đỉnh được liệt kê theo thứ tự tăng dần
 
-
 Đầu vào (Input):
 Dữ liệu đầu vào được nhập từ bàn phím với định dạng:
 
