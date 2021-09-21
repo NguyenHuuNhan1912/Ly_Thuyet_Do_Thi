@@ -17,8 +17,6 @@ In ra màn hình một con số nguyên duy nhất chỉ số BPTLM của đồ 
 
 Xem thêm ví dụ bên dưới.
 
-
-
 Hướng dẫn đọc dữ liệu và chạy thử chương trình
 Để chạy thử chương trình, bạn nên tạo một tập tin dt.txt chứa đồ thị cần kiểm tra.
 Thêm dòng freopen("dt.txt", "r", stdin); vào ngay sau hàm main(). Khi nộp bài, nhớ gỡ bỏ dòng này ra.
