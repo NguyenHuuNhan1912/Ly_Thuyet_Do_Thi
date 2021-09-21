@@ -20,8 +20,6 @@ In ra các đỉnh theo thứ tự duyệt, mỗi đỉnh trên 1 dòng.
 
 Xem thêm các ví dụ bên dưới.
 
-
-
 Hướng dẫn đọc dữ liệu và chạy thử chương trình
 Để chạy thử chương trình, bạn nên tạo một tập tin dt.txt chứa đồ thị cần kiểm tra.
 Thêm dòng freopen("dt.txt", "r", stdin); vào ngay sau hàm main(). Khi nộp bài, nhớ gỡ bỏ dòng này ra.
