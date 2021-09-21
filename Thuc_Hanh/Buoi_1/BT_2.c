@@ -39,6 +39,7 @@ return L->size;
 */
 
 //code
+
 List neighbors(Graph* G, int x){
     List L;
     make_null(&L);
