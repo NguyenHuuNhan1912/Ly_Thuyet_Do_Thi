@@ -24,6 +24,7 @@ Xem thêm ví dụ bên dưới. Trong ví dụ đầu tiên, Tôn Ngộ Không 
 //code
 
 //Ton ngo khong - Ly thuyet do thi
+
 #include <stdio.h>
 #include <stdbool.h>
 #define maxv 50
