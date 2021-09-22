@@ -6,7 +6,6 @@ Viết chương trình đếm số bộ phận liên thông mạnh (BPLTM) của
 Dữ liệu đầu vào được nhập từ bàn phím với định dạng:
 
 - Dòng đầu tiên chứa 2 số nguyên n và m, tương ứng là số đỉnh và số cung.
-
 - m dòng tiếp theo mỗi dòng chứa 2 số nguyên u, v mô tả cung (u, v).
 
 Chú ý: đồ thị không chứa đa cung.
