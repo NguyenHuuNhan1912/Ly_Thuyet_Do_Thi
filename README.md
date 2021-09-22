@@ -19,6 +19,6 @@
 * [Bài 5 - Kiểm tra chu trình - Đồ thị `vô hướng`](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_2/BT_5.c)
 * [Bài 6 - Thuyền trưởng Hadoock](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_2/BT_6.c)
 * [Bài 7 - Phân chia đội bóng](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_2/BT_7.c)
-* [Bài 8.1 - Kiểm tra tính liên thông mạnh](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_2/BT_8.c)
+* [Bài 8.1 - Kiểm tra tính liên thông mạnh](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_2/BT_8.1.c)
 * [Bài 8.2 - Đếm số bộ phận liên thông `mạnh`](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_2/BT_8.2.c)
 * [Bài 9 - Come and go](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_2/BT_9.c)
