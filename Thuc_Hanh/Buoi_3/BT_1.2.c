@@ -89,6 +89,7 @@ int main(){
 		scanf("%d%d%d",&u,&v,&t);
 		addEdge(&g,u,v,t);
 	}
+	
 	Dijkstra(&g,1);
 	
 	if(pi[n]==INFINITY) printf("-1");
