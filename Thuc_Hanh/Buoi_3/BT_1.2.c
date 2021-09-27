@@ -27,6 +27,7 @@ void initGraph(Graph *g){
 //Thêm cung e =(x,y,t) vào đồ thị với t là trọng số
 void addEdge(Graph *g, int x, int y, int t){
 	g->matrix[x][y]=t;
+	g->matrix[y][x]=t;
 }
 
 //Hàm tìm giá trị nhỏ nhất
