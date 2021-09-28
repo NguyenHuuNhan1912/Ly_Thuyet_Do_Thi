@@ -22,3 +22,10 @@
 * [Bài 8.1 - Kiểm tra tính liên thông mạnh](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_2/BT_8.1.c)
 * [Bài 8.2 - Đếm số bộ phận liên thông `mạnh`](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_2/BT_8.2.c)
 * [Bài 9 - Come and go](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_2/BT_9.c)
+## *Thực hành buổi 3*
+* [Bài 1.1 - Tìm đường đi ngắn nhất - đơn đồ thị có hướng](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_3/BT_1.1.c)
+* [Bài 1.2 - Tìm đường đi ngắn nhất - đơn đồ thị vô hướng](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_3/BT_1.2.c)
+* [Bài 2.1 - Kiểm tra chu trình âm - đơn đồ thị có hướng](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_3/BT_2.1.c)
+* [Bài 2.2 - Ứng dụng đường đi ngắn nhất - Ngưu Lang Chức Nữ](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_3/BT_2.2.c)
+* [Bài 3 - Ứng dụng đường đi ngắn nhất - Đất nước CyberGraph](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_3/BT_3.c)
+* [Bài 4 - Ứng dụng đường đi ngắn nhất - Mê cung số](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_3/BT_4.c)
