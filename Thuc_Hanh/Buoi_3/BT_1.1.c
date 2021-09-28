@@ -34,9 +34,6 @@ Có thể sử dụng đoạn chương trình đọc dữ liệu mẫu sau đây
 		add_edge(&G, u, v, w);
 	}
 
-
-
-
 For example:
 
 Input	Result
@@ -147,7 +144,7 @@ void Dijkstra(Graph *g, int x){
 }
 int main(){
 	Graph g;
-    scanf("%d%d",&n,&m);
+    	scanf("%d%d",&n,&m);
 	initGraph(&g);
 	int u,v,t;
 	for(int i=1;i<=m;i++){
@@ -155,7 +152,6 @@ int main(){
 		addEdge(&g,u,v,t);
 	}
 	Dijkstra(&g,1);
-	
 	if(pi[n]==INFINITY) printf("-1");
 	else printf("%d",pi[n]);
 	return 0;
