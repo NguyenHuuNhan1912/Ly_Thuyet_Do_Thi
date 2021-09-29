@@ -31,3 +31,4 @@
 * [Bài 4 - Ứng dụng đường đi ngắn nhất - Mê cung số](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_3/BT_4.c)
 
 Bùi Trần Ngọc Ly
+Nguyễn Hữu Nhân
