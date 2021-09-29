@@ -29,3 +29,4 @@
 * [Bài 2.2 - Ứng dụng đường đi ngắn nhất - Ngưu Lang Chức Nữ](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_3/BT_2.2.c)
 * [Bài 3 - Ứng dụng đường đi ngắn nhất - Đất nước CyberGraph](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_3/BT_3.c)
 * [Bài 4 - Ứng dụng đường đi ngắn nhất - Mê cung số](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_3/BT_4.c)
+dlfkhsdffds
