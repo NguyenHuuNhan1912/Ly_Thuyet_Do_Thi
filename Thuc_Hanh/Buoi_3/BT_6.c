@@ -36,7 +36,7 @@ Có thể sử dụng đoạn chương trình đọc dữ liệu mẫu sau đây
 For example:
 
 Input	Result
-4 4		YES
+4 4	YES
 1 2 1
 2 3 -1
 3 4 -1
