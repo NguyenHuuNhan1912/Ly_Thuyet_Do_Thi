@@ -32,3 +32,4 @@
 * [Bài 5 - Giải thuật Bellman - Ford - tìm đường đi ngắn nhất](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_3/BT_5.c)
 * [Bài 6 - Giải thuật Bellman - Ford - Kiểm tra chu trình âm](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_3/BT_6.c)
 * [Bài 7 - Tìm số đường đi ngắn nhất - Nâng cao](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_3/BT_7.c)
+* [Chú ý quan trọng trong buổi 3](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_3/NOTE.md)
