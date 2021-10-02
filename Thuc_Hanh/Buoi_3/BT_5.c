@@ -1,6 +1,7 @@
 #include <stdio.h>
 #define maxv 100
 #define INFINITY 9999999
+
 //Khai báo cấu trúc 1 cung đưa vào đồ thị gồm 2 đỉnh và 1 trọng số
 typedef struct{
 	int u, v;
