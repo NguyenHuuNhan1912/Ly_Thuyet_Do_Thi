@@ -85,17 +85,17 @@ typedef struct {
 }Graph;
 
 //Khởi tạo 
-void init_graph(Graph *G, int n){
-	G->n = n;
-	G->m = 0;
+void initGraph(Graph *g, int n){
+	g->n = n;
+	g->m = 0;
 }
 
 //Thêm cung 
-void addEdge(Graph *G, int u, int v, int w){
-	G->edges[G->m].u = u;
-	G->edges[G->m].v = v;
-	G->edges[G->m].w = w;
-	G->m++;
+void addEdge(Graph *g, int u, int v, int w){
+	g->edges[g->m].u = u;
+	g->edges[g->m].v = v;
+	g->edges[g->m].w = w;
+	g->m++;
 }
 
 int pi[maxv];//Mảng pi[] toàn cục lưu đường đi ngắn nhất tạm thờithời
@@ -125,15 +125,15 @@ void BellmanFord(Graph *g, int s){
 }
 
 int main(){
-	Graph G;
+	Graph g;
 	int n,m,u,v,w;
 	scanf("%d%d", &n, &m);
-	init_graph(&G, n);
+	initGraph(&g, n);
 	for (int e=1;e<=m;e++) {
 		scanf("%d%d%d",&u,&v,&w);
-		add_edge(&G,u,v,w);
+		addEdge(&g,u,v,w);
 	}
-	BellmanFord(&G, 1);
-	for(int i=1; i<=G.n;i++)
+	BellmanFord(&g, 1);
+	for(int i=1; i<=g.n;i++)
 		printf("pi[%d] = %d, p[%d] = %d\n", i, pi[i], i, p[i]);
 }
