@@ -1,4 +1,6 @@
 # <img src="https://cdn-icons-png.flaticon.com/128/3281/3281319.png" width ="60" heigh="60 "> Lý thuyết đồ thị - CT175<hr>
+## *Lý thuyết*
+* [Xếp hạng đồ thị và bài tập ví dụ](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Ly-Thuyet/Xep-Hang-Do-Thi.md)
 ## *Thực hành buổi 1*
 * [Bài 1 - Ma trận đỉnh - cung(add_edge)](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_1/BT_1.c)
 * [Bài 2 - Ma trận đỉnh - cung(Neighbors)](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_1/BT_2.c)
