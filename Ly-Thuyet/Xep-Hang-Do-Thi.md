@@ -37,4 +37,4 @@ While(s[k] != Rỗng)
                   Đưa v vào s[k+1]
        k++//Tăng k lên nếu s[k] rỗng -> Giải thuật kết thúc
 ```
-**[Xem bài tập mẫu ở đây](https://docs.google.com/spreadsheets/d/1pbiCp2ymAAHOYI1oPuYjZadiuNJW4SNVillljT0EdNU/edit?usp=sharing)**
+**[Xem bài tập mẫu số 1 gồm 2 sheets ở đây](https://docs.google.com/spreadsheets/d/1pbiCp2ymAAHOYI1oPuYjZadiuNJW4SNVillljT0EdNU/edit?usp=sharing)**
