@@ -38,3 +38,7 @@ While(s[k] != Rỗng)
        k++//Tăng k lên nếu s[k] rỗng -> Giải thuật kết thúc
 ```
 **[Xem ví dụ gồm 2 bài tập ở đây](https://docs.google.com/spreadsheets/d/1pbiCp2ymAAHOYI1oPuYjZadiuNJW4SNVillljT0EdNU/edit?usp=sharing)**
+
+<hr>
+
+Made by Nguyen Huu Nhan
