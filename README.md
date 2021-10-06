@@ -3,6 +3,10 @@
 * [Các khái niệm quan trọng](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Ly-Thuyet/Khai-Niem.md)
 * [Xếp hạng đồ thị và bài tập ví dụ](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Ly-Thuyet/Xep-Hang-Do-Thi.md)
 * [Cây vô hướng](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Ly-Thuyet/Cay-Vo-Huong.md)
+## *Các cấu trúc dữ liệu cần sử dụng để thực hành*
+* [Danh sách - LIST](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Library/List.c)
+* [Hàng đợi - QUEUE](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Library/Queue.c)
+* [Ngăn xếp - STACK](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Library/Stack.c)
 ## *Thực hành buổi 1*
 * [Bài 1 - Ma trận đỉnh - cung(add_edge)](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_1/BT_1.c)
 * [Bài 2 - Ma trận đỉnh - cung(Neighbors)](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_1/BT_2.c)
