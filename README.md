@@ -1,6 +1,8 @@
 # <img src="https://cdn-icons-png.flaticon.com/128/3281/3281319.png" width ="60" heigh="60 "> Lý thuyết đồ thị - CT175<hr>
 ## *Lý thuyết*
+* [Các khái niệm quan trọng](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Ly-Thuyet/Khai-Niem.md)
 * [Xếp hạng đồ thị và bài tập ví dụ](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Ly-Thuyet/Xep-Hang-Do-Thi.md)
+* [Cây vô hướng](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Ly-Thuyet/Cay-Vo-Huong.md)
 ## *Thực hành buổi 1*
 * [Bài 1 - Ma trận đỉnh - cung(add_edge)](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_1/BT_1.c)
 * [Bài 2 - Ma trận đỉnh - cung(Neighbors)](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_1/BT_2.c)
@@ -35,3 +37,7 @@
 * [Bài 6 - Giải thuật Bellman - Ford - Kiểm tra chu trình âm](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_3/BT_6.c)
 * [Bài 7 - Tìm số đường đi ngắn nhất - Nâng cao](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_3/BT_7.c)
 * [Chú ý quan trọng trong buổi 3](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_3/NOTE.md)
+
+<hr>
+
+*Made by Nguyen Huu Nhan*
