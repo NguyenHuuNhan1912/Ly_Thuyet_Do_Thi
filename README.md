@@ -10,7 +10,7 @@
 ## *Hướng dẫn phần thực hành các buổi*
 * [Hướng dẫn thực hành - Buổi 1](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Huong-Dan-Thuc-Hanh/Huong-Dan-TH-Buoi-1.pdf)
 * [Hướng dẫn thực hành - Buổi 2](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Huong-Dan-Thuc-Hanh/Huong-Dan-TH-Buoi-2.pdf)
-* [Hướng dẫn thực hành - Buổi 3](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Huong-Dan-Thuc-Hanh/Huong-Dan-TH-Buoi-3.pdf)
+* [Hướng dẫn thực hành - Buổi 3](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Huong-Dan-Thuc-Hanh/Huong-Dan-Th-Buoi-3.pdf)
 ## *Thực hành buổi 1*
 * [Bài 1 - Ma trận đỉnh - cung(add_edge)](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_1/BT_1.c)
 * [Bài 2 - Ma trận đỉnh - cung(Neighbors)](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_1/BT_2.c)
