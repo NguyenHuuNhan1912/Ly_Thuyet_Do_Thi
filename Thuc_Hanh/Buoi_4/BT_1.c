@@ -145,7 +145,7 @@ void copyList(List *s1, List *s2){
 //Các biến hỗ trợ thuật toán xếp hạng đồ thị 
 int rank[maxv]; //Mảng toàn cục lưu hạng của một đỉnh
 int d[maxv]; //Mảng toàn cục lưu bậc của một đỉnh
-int k=0; // Bước lập k
+int k=0; // Bước lặpkk
 List S1, S2; // Danh sách s1 lưu các đỉnh gốc cũ, danh sách s2 lưu các đỉnh gốc mới
 
 //Thuật toán xếp hạng đồ thị
@@ -164,10 +164,10 @@ void ranking(Graph *g){
     makenullList(&S1);//Khởi tạo danh sách chứa các đỉnh gốc ở bước lặp k
 
     for(u=1;u<=n;u++){
-		if(d[u] == 0){ //Chọn đỉnh gốc có bậc vào bằng 0 vừa tính ở trên
-			pushList(&S1, u); //Đưa đỉnh đó vào danh sách s1
-		}
-	}   
+	if(d[u] == 0){ //Chọn đỉnh gốc có bậc vào bằng 0 vừa tính ở trên
+		pushList(&S1, u); //Đưa đỉnh đó vào danh sách s1
+	}
+    }   
 
     int i;
     while(S1.size > 0){ //Lặp trong khi S1 chưa rỗng
