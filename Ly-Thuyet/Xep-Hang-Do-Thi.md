@@ -3,6 +3,9 @@
 1. Đồ thị phải **`Có hướng`**
 1. Đồ thị **`Không tồn tại chu trình`**
 1. Đồ thị tồn tại ít nhất 1 **`thứ tự topo`**
+## `Thứ tự topo:` *Chính là thứ tự xét hạng của các đỉnh*
+1. Một đồ thị `phải có ít nhất 1 thứ tự topo` (tức là có thể có nhiều thứ tự topo trong 1 đồ thị)
+1. `Lý do` có `nhiều hơn 1 thứ tự topo` chính là `hạng của các đỉnh bằng nhau` -> **Đồ thị có n đỉnh xếp hạng bằng nhau thì có n thứ tự topo**
 </hr>
 
 ## Có 2 giải thuật để xếp hạng đồ thị 
