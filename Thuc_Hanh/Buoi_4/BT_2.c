@@ -193,8 +193,7 @@ NOTE
 lặp k có thể bắt đầu từ 1 chứ không nhất thiết phải bắt đầu bằng 0
 2. Bài toán thực tế cân đá thực ra là:
     + Tìm danh sách theo thứ tự topo
-    + Thứ tự topo là thứ tự đỉnh nào xét hạng trước thì đỉnh đó là đỉnh đầu tiên
-    trong danh sách thứ tự topo
+    + Thứ tự topo chính là thứ tự các đỉnh được xét hạng 
     + Chỉ cần dựa vào giải thuật ranking sau khi xét hạng của một đỉnh ta chỉ cần đưa
     đỉnh đó vào một danh sách -> kết quả trả về là 1 danh sách có thứ tự topo
     + Tuy nhiên một đồ thị có thể có nhiều thứ tự topo 
