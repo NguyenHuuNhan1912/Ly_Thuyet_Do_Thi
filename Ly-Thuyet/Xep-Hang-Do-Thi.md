@@ -26,10 +26,10 @@
 ### CODE
 ```
 Tính bậc vào của các đỉnh và lưu tất cả vào d[u]
-Đưa các gốc(Các đỉnh có bậc vào bằng 0) vào s1
-Khởi tạo biến k = 1 
+Đưa các gốc(Các đỉnh có bậc vào bằng 0) vào s1 (gốc cũ)
+Khởi tạo biến k = 0 
 While(Lặp cho đến khi s1 rỗng)
-       Làm rỗng s[k+1]
+       Làm rỗng s1
        for(Các đỉnh u trong danh sách s1)
             rank[u] = k;
             for(Các đỉnh kề v của u)
@@ -37,7 +37,7 @@ While(Lặp cho đến khi s1 rỗng)
                 if(d[v] == 0) // nếu đỉnh kề có bậc bằng 0 -> đỉnh gốc mới
                   Đưa v vào s2  
        copy các đỉnh(gốc mới) của s2 đưa vào s1
-       k++//Tăng k lên nếu s1[k] rỗng -> Giải thuật kết thúc
+       k++//Tăng k lên để xếp hạng cho các đỉnh còn lại trong đồ thị
        
 ```
 **[Xem ví dụ gồm 2 bài tập ở đây](https://docs.google.com/spreadsheets/d/1pbiCp2ymAAHOYI1oPuYjZadiuNJW4SNVillljT0EdNU/edit?usp=sharing)**
