@@ -196,8 +196,8 @@ lặp k có thể bắt đầu từ 1 chứ không nhất thiết phải bắt �
     + Thứ tự topo chính là thứ tự các đỉnh được xét hạng 
     + Chỉ cần dựa vào giải thuật ranking sau khi xét hạng của một đỉnh ta chỉ cần đưa
     đỉnh đó vào một danh sách -> kết quả trả về là 1 danh sách có thứ tự topo
-    + Tuy nhiên một đồ thị có thể có nhiều thứ tự topo 
-    + Đồ thị có nhiều thứ tự topo tức là sẽ có 1 hoặc nhiều cặp đỉnh nào đó trong đồ thị
-    có hạng bằng nhau -> Đến khi gặp case như thế thì chúng ta chỉ cần suy luận một xíu 
+    + Tuy nhiên một đồ thị có thể có nhiều thứ tự topo: Đến khi gặp case như thế thì chúng ta chỉ cần suy luận một xíu 
     là có thể ra được đáp án
+    + Đồ thị có n thứ tự topo khi đồ thị đó có n đỉnh xếp hạng bằng nhau
+
 */
