@@ -40,7 +40,6 @@ Input	  Result
 2 4
 6 5
 4 6
-
 */
 
 // Xếp hạng đồ thị
