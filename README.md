@@ -50,9 +50,9 @@
 * [Bài 1 - Xếp hạng đồ thị](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_4/BT_1.c)
 * [Bài 2 - Bài toán thực tế - Cân đá](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_4/BT_2.c)
 * [Bài 3 - Bài toán thực tế-  Chia kẹo](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_4/BT_3.c)
-* [Bài 4 - Tổ chức thi công - Dự án xây nhà](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_4/BT_4.c)
-* [Bài 5.1 - Tổ chức thi công - Dự án phần mềm 1](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_4/BT_5.1.c)
-* [Bài 5.2 - Tổ chức thi công - Dự án phần mềm 2](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_4/BT_5.2.c)
+* [Bài 4 - Tổ chức thi công - Dự án xây nhà](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_4/BT_4.md)
+* [Bài 5.1 - Tổ chức thi công - Dự án phần mềm 1](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_4/BT_5.1.md)
+* [Bài 5.2 - Tổ chức thi công - Dự án phần mềm 2](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_4/BT_5.2.md)
 <hr>
 
 *Made by Nguyen Huu Nhan*
