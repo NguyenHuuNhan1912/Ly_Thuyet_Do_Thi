@@ -13,6 +13,7 @@ và lưu vào tập tin theo định dạng như bảng giá trị đầu vào
 Hãy viết chương trình tìm thời gian sớm nhất hoàn thành dự án và Thời điểm sớm nhất và trể nhất để bắt đầy cho mỗi công việc của dự án mà không ảnh hưởng đến tiến độ của dự án.
 
 Đầu vào:
+
 ```
 10
 7 0
