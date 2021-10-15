@@ -46,7 +46,13 @@
 * [Bài 6 - Giải thuật Bellman - Ford - Kiểm tra chu trình âm](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_3/BT_6.c)
 * [Bài 7 - Tìm số đường đi ngắn nhất - Nâng cao](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_3/BT_7.c)
 * [Chú ý quan trọng trong buổi 3](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_3/NOTE.md)
-
+## *Thực hành buổi 4*
+* [Bài 1 - Xếp hạng đồ thị](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_4/BT_1.c)
+* [Bài 2 - Bài toán thực tế - Cân đá](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_4/BT_2.c)
+* [Bài 3 - Bài toán thực tế-  Chia kẹo](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_4/BT_3.c)
+* [Bài 4 - Tổ chức thi công - Dự án xây nhà](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_4/BT_4.c)
+* [Bài 5.1 - Tổ chức thi công - Dự án phần mềm 1](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_4/BT_5.1.c)
+* [Bài 5.2 - Tổ chức thi công - Dự án phần mềm 2](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_4/BT_5.2.c)
 <hr>
 
 *Made by Nguyen Huu Nhan*
