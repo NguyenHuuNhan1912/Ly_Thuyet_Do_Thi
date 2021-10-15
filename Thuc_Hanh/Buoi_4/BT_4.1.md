@@ -140,6 +140,7 @@ int degreeOutput(Graph *g, int x){
     }
     return count;
 }
+
 //Tìm đỉnh láng giềng của một đỉnh
 List neighbors(Graph *g, int x){
     List L;
