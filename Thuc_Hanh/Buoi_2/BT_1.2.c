@@ -36,87 +36,113 @@ Có thể sử dụng đoạn chương trình đọc dữ liệu mẫu sau đây
 	}
 */
 
-//code
-//Duyet do thi theo chieu rong(Su dung hang doi)
+//CODE
+
+//Duyệt đồ thị theo chiều sâu - Đệ qui - Recursion
 #include <stdio.h>
 #include <stdbool.h>
-typedef int Vertices;
 #define maxv 50
+#define idx 100
+
+int n,m; //Biến toàn cục lưu n đỉnh và m cung
+
+//Khai báo cấu trúc đồ thị
+typedef int Vertices;
 typedef struct{
     int matrix[maxv][maxv];
-    Vertices n;
+    Vertices n;//Đỉnh n
 }Graph;
+
+// Khai báo cấu trúc danh sách - LIST
 typedef struct{
-    int data[maxv];
+    int data[idx];
     int size;
 }List;
+
+/*Các hàm trên danh sách*/
+
+//Làm rỗng danh sách
 void makenullList(List *l){
     l->size=0;
 }
-//Them 1 phan tu vao danh sach
-void pushList(List *l, int x){
-    l->data[l->size]=x;
+
+// Kiểm tra danh sách có rỗng hay không
+bool emptyList(List *l){
+    return l->size==0;
+}
+
+// Thêm 1 phần tử vào danh sách
+void pushList(List *l, int element){
+    l->data[l->size]=element;
     l->size++;
 }
-//Lay phan tu trong danh sach
-int getList(List l, int x){
-    return l.data[x];
+
+// Truy cập phần tử trong danh sách bắt đâu từ vị trí thứ 1 (Mảng bắt đầu bằng 0 nên index phải trừ đi 1)
+int getList(List *l, int index){
+    return l->data[index-1];
 }
-//Khoi tao do thi
-void initGraph(Graph *g, int n){
+
+/*Các hàm trên đồ thị*/
+
+// Khởi tạo đồ thị
+void initGraph(Graph *g){
     g->n=n;
-    for(int i=1;i<=n;i++){
-        for(int j=1;j<=n;j++){
+    for(int i=1;i<=n;i++)
+        for(int j=1;j<=n;j++)
             g->matrix[i][j]=0;
-        }
-    }
 }
-//Them cung 
-void addGraph(Graph *g, int u, int v){
-    g->matrix[u][v]=1;
-    g->matrix[v][u]=1;
+
+// Thêm cung e = (x,y) vào đồ thị
+void addEdge(Graph *g, int x, int y){
+    g->matrix[x][y]=1;
+    g->matrix[y][x]=1;
 }
-//Tim dinh lang gieng
-List neighbors(Graph g, int x){
+
+// Kiểm tra 2 đỉnh có kề nhau hay không
+bool adjacent(Graph *g, int x, int y){
+    return g->matrix[x][y]==1;
+}
+
+// Tìm đỉnh láng giềng(đỉnh kề) của một đỉnh
+List neighbors(Graph *g, int x){
     List L;
     makenullList(&L);
-    for(int i=1;i<=g.n;i++){
-        if(g.matrix[x][i]==1){
+    for(int i=1;i<=n;i++){
+        if(adjacent(g,x,i)){
             pushList(&L,i);
         }
     }
     return L;
 }
-//Duyet do thi theo chieu rong su dung DEQUI
-int mark[maxv];
-int father[maxv];
-//Thuat toan duyet do thi theo chieu sau bang de qui(Recursion)
-void DFS_Recursion(Graph *g, int x, int p){
-    if(mark[x]==1) return;
-    printf("%d\n",x);
-    mark[x]=1;
-    List L = neighbors(*g,x);
-    for(int j=0;j<L.size;j++){
-        int v = getList(L,j);
-        DFS_Recursion(g,v,x);
+
+int mark[maxv];//Mảng toàn cục mark để đánh dấu 1 đỉnh đã được duyệt hay chưa
+
+// Giải thuật duyệt đồ thị theo chiều sâu - Sử dụng đệ qui
+void DFS_Recursion(Graph *g, int x){
+    if(mark[x]==1) return; //Nếu đỉnh đã được duyệt kết thúc và không trả về gì
+    mark[x]=1; //Nếu chưa duyệt thì đánh dấu đã duyệt
+    printf("%d\n",x); //In đỉnh vừa duyệt ra màn hình
+    List L = neighbors(g,x); //Tìm đỉnh láng giềng của đỉnh đang xét
+    for(int j=1;j<=L.size;j++){
+        int v = getList(&L,j); //Lấy đỉnh v kề với đỉnh đang xét ra 
+        DFS_Recursion(g,v); //Tiếp tục gọi đệ qui
     }
-}
-//in
-void print_result_Recursion(Graph g){
-    for(int i=1;i<=g.n;i++){
-        mark[i]=0;
-    }
-    for(int i=1;i<=g.n;i++) DFS_Recursion(&g,i,0);
 }
 int main(){
     Graph g;
-	int n, m, u, v, e;
-	scanf("%d%d", &n, &m);
-	initGraph(&g, n);
-	for (e = 0; e < m; e++) {
-		scanf("%d%d", &u, &v);
-		addGraph(&g, u, v);
-	}
-	 print_result_Recursion(g);
+    scanf("%d%d",&n,&m);
+    initGraph(&g);
+    int u,v;
+    for(int i=1;i<=m;i++){
+        scanf("%d%d",&u,&v);
+        addEdge(&g,u,v);
+    }
+    
+    for(int i=1;i<=n;i++)
+        mark[i]=0; //Khởi tạo tất cả các đỉnh điều chưa được duyệt
+    
+    for(int i=1;i<=n;i++)
+         DFS_Recursion(&g,i); //Gọi hàm để duyệt
+	
     return 0;
 }
