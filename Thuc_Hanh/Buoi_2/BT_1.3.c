@@ -38,132 +38,164 @@ Có thể sử dụng đoạn chương trình đọc dữ liệu mẫu sau đây
 	}
 */
 
-//code
+//CODE
 
-//Duyet do thi theo chieu rong(Su dung hang doi)
+/// Duyệt đồ thị theo chiều sâu - Stack
 #include <stdio.h>
 #include <stdbool.h>
-typedef int Vertices;
 #define maxv 50
+#define idx 100
+
+int n,m;//Biến toàn cục lưu n đỉnh và m cung
+
+// Khai báo cấu trúc đồ thị
+typedef int Vertices;
 typedef struct{
     int matrix[maxv][maxv];
-    Vertices n;
+    Vertices n;//Đỉnh n
 }Graph;
+
+// Khai báo cấu trúc danh sách - LIST
 typedef struct{
-    int data[maxv];
+    int data[idx];
     int size;
 }List;
+
+// Khai báo cấu trúc ngắn xếp - STACK
 typedef struct{
-    int data[maxv];
+    int data[idx];
     int size;
 }Stack;
-//Khoi tao
+
+/*Các hàm của ngăn xếp*/
+
+// Làm rỗng ngăn xếp
 void makenullStack(Stack *s){
     s->size=0;
 }
-//Kiem tra stack null
+
+// Kiểm tra ngăn xếp có rỗng hay không
 bool emptyStack(Stack *s){
-    return (s->size==0);
+    return s->size==0;
 }
-//them phan tu vao hang doi
-void pushStack(Stack *s, int x){
-    s->data[s->size]=x;
+
+// Thêm 1 phần tử vào ngăn xếp
+void pushStack(Stack *s, int element){
+    s->data[s->size]=element;
     s->size++;
 }
-//Lay phan tu ra
+
+//Truy cập phần tử trong ngăn xếp
 int getStack(Stack *s){
     return s->data[s->size-1];
 }
-void deleteSize(Stack *s){
+
+// Xóa vị trí phần tử trong ngăn xếp đi(Vị trị này thực tế vẫn còn nhưng chúng ta không truy cập đến nữa)
+void delSize(Stack *s){
     s->size--;
 }
+
+/*Các hàm trên danh sách*/
+
+// Làm rỗng danh sách
 void makenullList(List *l){
     l->size=0;
 }
-//Them 1 phan tu vao danh sach
-void pushList(List *l, int x){
-    l->data[l->size]=x;
+
+// Kiểm tra danh sách có rỗng hay không
+bool emptyList(List *l){
+    return l->size==0;
+}
+
+// Thêm 1 phần tử vào danh sách
+void pushList(List *l, int element){
+    l->data[l->size]=element;
     l->size++;
 }
-//Lay phan tu trong danh sach
-int getList(List l, int x){
-    return l.data[x];
+
+// Truy cập đến phần tử có vị trí index trong danh sách
+int getList(List *l, int index){
+    return l->data[index-1];
 }
-//Khoi tao do thi
-void initGraph(Graph *g, int n){
+
+/*Các hàm trên đồ thị*/
+
+// Khởi tạo đồ thị
+void initGraph(Graph *g){
     g->n=n;
-    for(int i=1;i<=n;i++){
-        for(int j=1;j<=n;j++){
+    for(int i=1;i<=n;i++)
+        for(int j=1;j<=n;j++)
             g->matrix[i][j]=0;
-        }
-    }
 }
-//Them cung 
-void addGraph(Graph *g, int u, int v){
-    g->matrix[u][v]=1;
-    g->matrix[v][u]=1;
+
+// Thêm cung e = (x,y) vào đồ thị
+void addEdge(Graph *g, int x, int y){
+    g->matrix[x][y]=1;
+    g->matrix[y][x]=1;
 }
-//Tim dinh lang gieng
-List neighbors(Graph g, int x){
+
+// Kiểm tra 2 đỉnh có kề nhau hay không
+bool adjacent(Graph *g, int x, int y){
+    return g->matrix[x][y]==1;
+}
+
+// Tìm tất cả đỉnh láng giềng(đỉnh kề) của đỉnh x
+List neighbors(Graph *g, int x){
     List L;
     makenullList(&L);
-    for(int i=1;i<=g.n;i++){
-        if(g.matrix[x][i]==1){
+    for(int i=1;i<=n;i++){
+        if(adjacent(g,x,i)){
             pushList(&L,i);
         }
     }
     return L;
 }
-//Duyet do thi theo chieu rong su dung queue
-List DFS(Graph *g, int x){
-    List rs;
+int mark[maxv];//Mảng toàn cục mark để đánh dấu 1 đỉnh đã được duyệt hay chưa
+
+// Giải thuật duyệt sâu sử dụng ngăn xếp - DFS - STACK
+List DFS_Stack(Graph *g, int x){
+    List rs;//Danh sách lưu các đỉnh đã được duyệt
     makenullList(&rs);
     Stack s;
-    int mark[maxv];
-    for(int i=1;i<=g->n;i++) mark[i]=0;
     makenullStack(&s);
     pushStack(&s,x);
-    while(!emptyStack(&s)){
+    while(!emptyStack(&s)){ //Lập trong khi ngăn xếp chưa rỗng
         int u = getStack(&s);
-        deleteSize(&s);
-        if(mark[u]==1) continue;
-        pushList(&rs,u);
-        mark[u]=1;
-        List L = neighbors(*g,u);
-        for(int j=0;j<L.size;j++){
-            int v = getList(L,j);
-            if(mark[v]==0){
-                pushStack(&s,v);
+        delSize(&s);
+        if(mark[u]==1) continue; //Nếu đỉnh u đã được duyệt thì bỏ qua các câu lệnh phía sau
+        pushList(&rs,u); //Nếu u chưa duyệt thay vì in ra thì chúng ta sẽ đưa vào danh sách rs(result) -> danh sách kết quả
+        mark[u]=1; //Đánh dấu u đã duyệt
+        List L = neighbors(g,u); //Tìm đỉnh láng giềng của u đưa vào danh sách L
+        for(int j=1;j<=L.size;j++){
+            int v = getList(&L,j); //Lấy đỉnh láng giềng u trong danh sách L ra -> Lấy đỉnh v
+            if(mark[v]==0){ //Nếu v chưa được duyệt
+                pushStack(&s,v); //Đưa vào ngăp xếp duyệt v
             }
         }
     }
     return rs;
 }
-void print_DFS(Graph g){
-    int md[maxv];
-    for(int i=1;i<=g.n;i++){
-        md[i]=0;
-    }
-    for(int i=1;i<=g.n;i++){
-        if(md[i]==0){
-            List L = DFS(&g,i);
-            for(int j=0;j<L.size;j++){
-                int v = getList(L,j);
-                printf("%d\n",v);
-                md[v]=1;
-            }   
-        }
-    }
-}
 int main(){
     Graph g;
-	int n, m, u, v, e;
-	scanf("%d%d", &n, &m);
-	initGraph(&g, n);
-	for (e = 0; e < m; e++) {
-		scanf("%d%d", &u, &v);
-		addGraph(&g, u, v);
-	}
-	print_DFS(g);
+    scanf("%d%d",&n,&m);
+    initGraph(&g);
+    int u,v;
+    for(int i=1;i<=m;i++){
+        scanf("%d%d",&u,&v);
+        addEdge(&g,u,v);
+    }
+    // Khởi tạo toàn bộ phần tử trong mảng mark bằng 0 vì chưa có đỉnh nào được duyệt
+    for(int i=1;i<=n;i++) mark[i]=0;
+    
+    for(int i=1;i<=n;i++){
+        if(mark[i]==0){ //Nếu đỉnh chưa được duyệt
+            List L = DFS_Stack(&g,i); //Gọi hàm và duyệt 
+            for(int j=1;j<=L.size;j++){
+                int v = getList(&L,j);
+                printf("%d\n",v); //in
+                mark[v]=1; //Đánh dấu đã duyệt
+            }
+        }
+    }
     return 0;
 }
