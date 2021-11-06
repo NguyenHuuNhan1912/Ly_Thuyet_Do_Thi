@@ -132,7 +132,7 @@ void pushList(List *l, int element){
     l->size++;
 }
 
-// Truy cập phần tử trong danh sách 
+// Truy cập phần tử trong danh sách bắt đầu từ vị trí thứ 1(Mảng bắt đầu bằng 0 nên index phải trừ đi 1)
 int getList(List *l, int index){
     return l->data[index-1];
 }
