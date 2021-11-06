@@ -145,7 +145,7 @@ bool adjacent(Graph *g, int x, int y){
     return g->matrix[x][y]==1;
 }
 
-// Tìm đỉnh kề của 1 đỉnh
+// Tìm tất cả đỉnh láng giềng(đỉnh kề) của đỉnh x
 List neighbors(Graph *g, int x){
     List L;
     makenullList(&L);
