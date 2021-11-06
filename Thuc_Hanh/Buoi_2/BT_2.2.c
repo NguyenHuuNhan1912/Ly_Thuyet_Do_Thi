@@ -61,7 +61,7 @@ Có thể sử dụng đoạn chương trình đọc dữ liệu mẫu sau đây
 
 //CODE
 
-//Duyệt đồ thị theo chiều sâu - Đệ qui - Recursion
+//Duyệt và dựng cây đồ thị theo chiều sâu - Đệ qui - Recursion
 #include <stdio.h>
 #include <stdbool.h>
 #define maxv 50
@@ -139,16 +139,17 @@ List neighbors(Graph *g, int x){
 }
 
 int mark[maxv];//Mảng toàn cục mark để đánh dấu 1 đỉnh đã được duyệt hay chưa
-
+int parent[maxv];//Mảng parent lưu đỉnh cha của tất cả các đỉnh trong đồ thị
 // Giải thuật duyệt đồ thị theo chiều sâu - Sử dụng đệ qui
-void DFS_Recursion(Graph *g, int x){
+void DFS_Recursion(Graph *g, int x, int p){
     if(mark[x]==1) return; //Nếu đỉnh đã được duyệt kết thúc và không trả về gì
     mark[x]=1; //Nếu chưa duyệt thì đánh dấu đã duyệt
-    printf("%d\n",x); //In đỉnh vừa duyệt ra màn hình
+    //printf("%d\n",x); Đề bài yêu cầu chỉ cần in ra cha nên không cần phải in thứ tự duyệt
+    parent[x]=p; //Đỉnh đầu tiên được xét là đỉnh 1 nên cha của đỉnh 1 theo quy ước lúc này = p = 0, các lần lặp sau p có thể sẽ thay đổi
     List L = neighbors(g,x); //Tìm đỉnh láng giềng của đỉnh đang xét
     for(int j=1;j<=L.size;j++){
         int v = getList(&L,j); //Lấy đỉnh v kề với đỉnh đang xét ra 
-        DFS_Recursion(g,v); //Tiếp tục gọi đệ qui
+        DFS_Recursion(g,v,x); //Tiếp tục gọi đệ qui đỉnh cha của đỉnh đang đang xét là đỉnh trước đó(Lúc này p đã không còn là 0 mà đã là x)
     }
 }
 int main(){
@@ -161,10 +162,15 @@ int main(){
         addEdge(&g,u,v);
     }
     
-    for(int i=1;i<=n;i++)
+    for(int i=1;i<=n;i++){
         mark[i]=0; //Khởi tạo tất cả các đỉnh điều chưa được duyệt
+        parent[i]=-1; //Khởi tạo tất cả các đỉnh có đỉnh cha bằng null(-1)
+    }
+        
+    for(int i=1;i<=n;i++)
+         DFS_Recursion(&g,i,0); //Gọi hàm để duyệt và đỉnh cha của đỉnh đầu tiền là 0
     
     for(int i=1;i<=n;i++)
-         DFS_Recursion(&g,i); //Gọi hàm để duyệt
+        printf("%d %d\n",i,parent[i]); //In ra các đỉnh và đỉnh cha của các đỉnh đó
     return 0;
 }
