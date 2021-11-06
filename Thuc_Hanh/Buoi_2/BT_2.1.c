@@ -176,7 +176,7 @@ int mark[maxv];//Mảng toàn cục mark để đánh dấu 1 đỉnh đã đư�
 int parent[maxv]; //Mảng toàn cục parent để lưu đỉnh cha của toàn bộ đỉnh trong đồ thị
 
 // Giải thuật duyệt rộng sử dụng hàng đợi - BFS - QUEUE
-List BFS(Graph *g, int x, int parent[]){
+List BFS(Graph *g, int x){
     List rs; //Danh sách lưu các đỉnh đã được duyệt
     makenullList(&rs);
     Queue q; 
@@ -219,7 +219,7 @@ int main(){
     
     for(int i=1;i<=n;i++){
         if(mark[i]==0){ //Nếu đỉnh chưa được duyệt
-            List L = BFS(&g,i,parent); //Gọi hàm và duyệt 
+            List L = BFS(&g,i); //Gọi hàm và duyệt 
             for(int j=1;j<=L.size;j++){
                 int v = getList(&L,j);
                 // printf("%d\n",v); 
