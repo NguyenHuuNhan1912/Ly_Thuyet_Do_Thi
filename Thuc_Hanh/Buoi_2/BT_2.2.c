@@ -60,15 +60,16 @@ Có thể sử dụng đoạn chương trình đọc dữ liệu mẫu sau đây
 */
 
 //CODE
-// Duyệt đồ thị theo chiều sâu - Stack
+
+//Duyệt đồ thị theo chiều sâu - Đệ qui - Recursion
 #include <stdio.h>
 #include <stdbool.h>
 #define maxv 50
 #define idx 100
 
-int n,m;//Biến toàn cục lưu n đỉnh và m cung
+int n,m; //Biến toàn cục lưu n đỉnh và m cung
 
-// Khai báo cấu trúc đồ thị
+//Khai báo cấu trúc đồ thị
 typedef int Vertices;
 typedef struct{
     int matrix[maxv][maxv];
@@ -81,43 +82,9 @@ typedef struct{
     int size;
 }List;
 
-// Khai báo cấu trúc ngắn xếp - STACK
-typedef struct{
-    int data[idx];
-    int size;
-}Stack;
-
-/*Các hàm của ngăn xếp*/
-
-// Làm rỗng ngăn xếp
-void makenullStack(Stack *s){
-    s->size=0;
-}
-
-// Kiểm tra ngăn xếp có rỗng hay không
-bool emptyStack(Stack *s){
-    return s->size==0;
-}
-
-// Thêm 1 phần tử vào ngăn xếp
-void pushStack(Stack *s, int element){
-    s->data[s->size]=element;
-    s->size++;
-}
-
-//Truy cập phần tử trong ngăn xếp
-int getStack(Stack *s){
-    return s->data[s->size-1];
-}
-
-// Xóa vị trí phần tử trong ngăn xếp đi(Vị trị này thực tế vẫn còn nhưng chúng ta không truy cập đến nữa)
-void delSize(Stack *s){
-    s->size--;
-}
-
 /*Các hàm trên danh sách*/
 
-// Làm rỗng danh sách
+//Làm rỗng danh sách
 void makenullList(List *l){
     l->size=0;
 }
@@ -133,7 +100,7 @@ void pushList(List *l, int element){
     l->size++;
 }
 
-// Truy cập đến phần tử có vị trí index trong danh sách
+// Truy cập phần tử trong danh sách bắt đâu từ vị trí thứ 1 (Mảng bắt đầu bằng 0 nên index phải trừ đi 1)
 int getList(List *l, int index){
     return l->data[index-1];
 }
@@ -159,7 +126,7 @@ bool adjacent(Graph *g, int x, int y){
     return g->matrix[x][y]==1;
 }
 
-// Tìm tất cả đỉnh láng giềng(đỉnh kề) của đỉnh x
+// Tìm đỉnh láng giềng(đỉnh kề) của một đỉnh
 List neighbors(Graph *g, int x){
     List L;
     makenullList(&L);
@@ -170,33 +137,19 @@ List neighbors(Graph *g, int x){
     }
     return L;
 }
-int mark[maxv];//Mảng toàn cục mark để đánh dấu 1 đỉnh đã được duyệt hay chưa
-int parent[maxv]; //Mảng toàn cục parent để lưu đỉnh cha của toàn bộ đỉnh trong đồ thị
 
-// Giải thuật duyệt sâu sử dụng ngăn xếp - DFS - STACK
-List DFS_Stack(Graph *g, int x){
-    List rs;//Danh sách lưu các đỉnh đã được duyệt
-    makenullList(&rs);
-    Stack s;
-    makenullStack(&s);
-    pushStack(&s,x);
-    parent[x]=0; //Nếu đỉnh đang xét là đỉnh gốc thì đỉnh cha của đỉnh gốc là 0
-    while(!emptyStack(&s)){ //Lập trong khi ngăn xếp chưa rỗng
-        int u = getStack(&s);
-        delSize(&s);
-        if(mark[u]==1) continue; //Nếu đỉnh u đã được duyệt thì bỏ qua các câu lệnh phía sau
-        pushList(&rs,u); //Nếu u chưa duyệt thay vì in ra thì chúng ta sẽ đưa vào danh sách rs(result) -> danh sách kết quả
-        mark[u]=1; //Đánh dấu u đã duyệt
-        List L = neighbors(g,u); //Tìm đỉnh láng giềng của u đưa vào danh sách L
-        for(int j=1;j<=L.size;j++){
-            int v = getList(&L,j); //Lấy đỉnh láng giềng u trong danh sách L ra -> Lấy đỉnh v
-            if(mark[v]==0){ //Nếu v chưa được duyệt
-                pushStack(&s,v); //Đưa vào ngăp xếp duyệt v
-                parent[v]=u; //Vì đây là Stack nên sẽ khác Queue ở chỗ này -> không cần if(parent[v]==-1)
-            }
-        }
+int mark[maxv];//Mảng toàn cục mark để đánh dấu 1 đỉnh đã được duyệt hay chưa
+
+// Giải thuật duyệt đồ thị theo chiều sâu - Sử dụng đệ qui
+void DFS_Recursion(Graph *g, int x){
+    if(mark[x]==1) return; //Nếu đỉnh đã được duyệt kết thúc và không trả về gì
+    mark[x]=1; //Nếu chưa duyệt thì đánh dấu đã duyệt
+    printf("%d\n",x); //In đỉnh vừa duyệt ra màn hình
+    List L = neighbors(g,x); //Tìm đỉnh láng giềng của đỉnh đang xét
+    for(int j=1;j<=L.size;j++){
+        int v = getList(&L,j); //Lấy đỉnh v kề với đỉnh đang xét ra 
+        DFS_Recursion(g,v); //Tiếp tục gọi đệ qui
     }
-    return rs;
 }
 int main(){
     Graph g;
@@ -207,26 +160,11 @@ int main(){
         scanf("%d%d",&u,&v);
         addEdge(&g,u,v);
     }
-    // Khởi tạo toàn bộ phần tử trong mảng mark bằng 0 vì chưa có đỉnh nào được duyệt
-    for(int i=1;i<=n;i++){
-        mark[i]=0;
-        parent[i]=-1;
-    }
     
-    for(int i=1;i<=n;i++){
-        if(mark[i]==0){ //Nếu đỉnh chưa được duyệt
-            List L = DFS_Stack(&g,i); //Gọi hàm và duyệt 
-            for(int j=1;j<=L.size;j++){
-                int v = getList(&L,j);
-                // printf("%d\n",v); 
-                //Đề yêu cầu chỉ in đỉnh cha của các đỉnh ra thôi nên không cần in thứ tự duyệt của đồ thị
-                mark[v]=1; //Đánh dấu đã duyệt
-            }
-        }
-    }
-
-    //In các đỉnh cha của các đỉnh trong đồ thị
     for(int i=1;i<=n;i++)
-        printf("%d %d\n",i,parent[i]); //Đỉnh i có đỉnh cha là parent[i]
+        mark[i]=0; //Khởi tạo tất cả các đỉnh điều chưa được duyệt
+    
+    for(int i=1;i<=n;i++)
+         DFS_Recursion(&g,i); //Gọi hàm để duyệt
     return 0;
 }
