@@ -1,11 +1,12 @@
 /*
-Cho một đồ thị vô hướng đơn. Hãy dựng (các) cây DUYỆT ĐỒ THỊ khi duyệt đồ thị theo chiều sâu (dùng NGĂN XẾP) bắt đầu từ đỉnh 1.
+Cho một đồ thị vô hướng đơn. Hãy dựng (các) cây DUYỆT ĐỒ THỊ khi duyệt đồ thị theo chiều sâu (dùng ĐỆ QUY) bắt đầu từ đỉnh 1.
 
 Nếu đồ thị không liên thông, sau khi duyệt xong lần 1, tìm đỉnh có chỉ số nhỏ nhất chưa duyệt mà duyệt nó, và cứ tiếp tục như thế cho đến khi tất cả các đỉnh đều được duyệt.
 
 Quy ước:
 
-Các đỉnh kề của 1 đỉnh được liệt kê theo thứ tự tăng dần
+Các đỉnh kề của 1 đỉnh được liệt kê theo thứ tự tăng dần.
+
 
 Đầu vào (Input):
 Dữ liệu đầu vào được nhập từ bàn phím với định dạng:
@@ -35,11 +36,12 @@ Gợi ý:
 
 Sử dụng mảng parent[u] để lưu đỉnh cha của đỉnh u.
 Trong quá trình duyệt, thay vì in các đỉnh ra màn hình, ghi nhận lại đỉnh cha của các đỉnh.
-Sử dụng 1 stack lưu các cặp <u, parent>. Khi xét đỉnh v (là kề của u) để đưa vào stack, ta đưa cả <v, u> vào stack. Lúc này u được xem như là parent của v.
-typedef struct {
-    int u;
-    int parent;
-} ELEMENT_TYPE;
+Thêm 1 tham số p (đỉnh cha của đỉnh u) cho hàm visit(). Khi gọi đệ quy duyệt v ta truyền u như là đỉnh cha của v.
+void visit(Graph* G, int u, int p) {
+    ...
+    for (các đỉnh kề v của u)
+        visit(G, v, u);
+}
 Khi duyệt xong lần lượt in ra u và parent[u] (u chạy từ 1 đến n).
 
 
