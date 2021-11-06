@@ -32,116 +32,121 @@ Input	Result
 
 */
 
-//code
+//CODE
+//Bài toán thực tế - Đồ thị liên thông - Qua đảo
 #include <stdio.h>
 #include <stdbool.h>
 #define maxv 50
 #define idx 100
-typedef int Vertices;
 
-//Khai bao cau truc do thi
+int n,m; //Biến toàn cục lưu n đỉnh và m cung
+
+//Khai báo cấu trúc đồ thị
+typedef int Vertices;
 typedef struct{
     int matrix[maxv][maxv];
-    Vertices n;//Dinh n
+    Vertices n;//Đỉnh n
 }Graph;
 
-int n,m;//Bien toan cuc luu so dinh va so canh
-
-//Khai bao cau truc danh sach - LIST
+// Khai báo cấu trúc danh sách - LIST
 typedef struct{
     int data[idx];
     int size;
 }List;
 
-/*Cac ham tren danh sach*/
+/*Các hàm trên danh sách*/
 
-//Lam rong danh sach
+//Làm rỗng danh sách
 void makenullList(List *l){
     l->size=0;
 }
 
-//Them phan tu vao danh sach
-void pushList(List *l, int x){
-    l->data[l->size]=x;
+// Kiểm tra danh sách có rỗng hay không
+bool emptyList(List *l){
+    return l->size==0;
+}
+
+// Thêm 1 phần tử vào danh sách
+void pushList(List *l, int element){
+    l->data[l->size]=element;
     l->size++;
 }
 
-//Truy cap phan tu trong danh sach
-int getList(List *l, int x){
-    return l->data[x];
+// Truy cập phần tử trong danh sách bắt đâu từ vị trí thứ 1 (Mảng bắt đầu bằng 0 nên index phải trừ đi 1)
+int getList(List *l, int index){
+    return l->data[index-1];
 }
-/*Cac ham tren do thi*/
 
-//Khoi tao do thi rong
+/*Các hàm trên đồ thị*/
+
+// Khởi tạo đồ thị
 void initGraph(Graph *g){
     g->n=n;
-    for(int i=1;i<=n;i++){
-        for(int j=1;j<=n;j++){
+    for(int i=1;i<=n;i++)
+        for(int j=1;j<=n;j++)
             g->matrix[i][j]=0;
-        }
-    }
 }
 
-//Them cung e = (x,y) vao do thi
-void addGraph(Graph *g, int x, int y){
+// Thêm cung e = (x,y) vào đồ thị
+void addEdge(Graph *g, int x, int y){
     g->matrix[x][y]=1;
     g->matrix[y][x]=1;
 }
 
-//Tim dinh lang gieng cua dinh x (x la dinh dinh bat ki trong do thi)
-List neighbors(Graph g, int x){
+// Kiểm tra 2 đỉnh có kề nhau hay không
+bool adjacent(Graph *g, int x, int y){
+    return g->matrix[x][y]==1;
+}
+
+// Tìm đỉnh láng giềng(đỉnh kề) của một đỉnh
+List neighbors(Graph *g, int x){
     List L;
     makenullList(&L);
     for(int i=1;i<=n;i++){
-        if(g.matrix[x][i]==1){
+        if(adjacent(g,x,i)){
             pushList(&L,i);
         }
     }
     return L;
 }
 
-int count;//Bien toan cuc kiem tra do thi co lien thong hay khong
-int mark[maxv];//Mang toan cuc danh dau 1 dinh da duyet vao do thi hay chua
+int mark[maxv];//Mảng toàn cục mark để đánh dấu 1 đỉnh đã được duyệt hay chưa
+int count=0;//Biến count toàn cục để kiểm tra -> Khi một đỉnh được duyệt count sẽ tăng lên 1 -> Nếu kết thúc giải thuật mà count = đỉnh n -> Liên thông
 
-//Duyet do thi theo chieu sau bang de qui
+// Giải thuật duyệt đồ thị theo chiều sâu - Sử dụng đệ qui
 void DFS_Recursion(Graph *g, int x){
-    if(mark[x]==1) return; //Neu dinh do da duyet thi kh duyet nua 
-    mark[x]=1; //Danh dau dinh do da duyet
-    count++; //Tang bien count len 1 don vi
-    List L = neighbors(*g,x); //Tim dinh lang gieng cua dinh x luu vao danh sach
-    for(int j=0;j<L.size;j++){
-        int v = getList(&L,j); //Lay dinh ke dau tien cua dinh x trong danh sach ra
-        DFS_Recursion(g,v); //Goi de qui
+    if(mark[x]==1) return; //Nếu đỉnh đã được duyệt kết thúc và không trả về gì
+    mark[x]=1; //Nếu chưa duyệt thì đánh dấu đã duyệt
+    count++; //Khi có một đỉnh được duyệt -> Tăng count
+    List L = neighbors(g,x); //Tìm đỉnh láng giềng của đỉnh đang xét
+    for(int j=1;j<=L.size;j++){
+        int v = getList(&L,j); //Lấy đỉnh v kề với đỉnh đang xét ra 
+        DFS_Recursion(g,v); //Tiếp tục gọi đệ qui
     }
-    
 }
-
-//Kiem tra
 bool check(){
-    //Neu bien count = so dinh cua do thi --> Do thi vo huong lien thong
-    //Do thi duoc goi la lien thong chi ton tai duy nhat 1 thanh phan lien thong
-    return (n==count);
+    return n==count; //Nếu count = số đỉnh ban đầu của đồ thị -> Đồ thị liên thông -> Giải quyết được vấn đề của chúa đảo
 }
 int main(){
-
     Graph g;
-    int u,v;
     scanf("%d%d",&n,&m);
     initGraph(&g);
+    int u,v;
     for(int i=1;i<=m;i++){
         scanf("%d%d",&u,&v);
-        addGraph(&g,u,v);
+        addEdge(&g,u,v);
     }
+    
+    for(int i=1;i<=n;i++)
+        mark[i]=0; //Khởi tạo tất cả các đỉnh điều chưa được duyệt
+    
 
-    //Khoi tao cac phan tu trong mark ban dau = 0
-    for(int i=1;i<=n;i++) mark[i]=0;
+    DFS_Recursion(&g,1); 
+    //Muốn kiểm tra đồ thị có liên thông hay không thì dựa vào tính chất -> đồ thị được gọi là liên thông thì chỉ có một thành phần liên thông
+    //Nên ta chỉ gọi hàm cho đỉnh 1 nếu nó liên thông thì mặc nhiên tất cả các đỉnh trong đồ thị sẽ được duyệt
 
-    //Goi ham de qui bat dau tu dinh 1
-    DFS_Recursion(&g,1);
-
-    //Goi ham de kiem tra
-    if(check()) printf("YES");
-    else printf("NO");
-
+    if(check()) printf("YES"); //Liên thông 
+    else printf("NO"); //Không liên thông
+    
     return 0;
 }
