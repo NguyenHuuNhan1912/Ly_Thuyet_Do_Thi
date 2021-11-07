@@ -37,7 +37,6 @@ Có thể sử dụng đoạn chương trình đọc dữ liệu mẫu sau đây
 
 //code
 
-//Kiem tra do thi co lien thong manh hay khong - Don do thi co huong - ma tran dinh dinh
 #include <stdio.h>
 #include <stdbool.h>
 #define maxv 50
@@ -122,7 +121,7 @@ List neighbors(Graph *g, int x){
     return L;
 }
 //Cac bien mang toan cuc de thuc hien viec kiem tra
-int count,k=1;
+int count=0,k=1;
 int num[maxv],min_num[maxv],on_stack[maxv];
 //Ham tim gia tri nho nhat
 int min(int a, int b){
@@ -144,7 +143,7 @@ void strong_connect(Graph *g, int x){
     for(int j=0;j<L.size;j++){
         int v = getList(&L,j);
         //Neu dinh ke x chua co trong stack
-        if(num[v]==-1){
+        if(on_stack[v]==-1){
             //Goi de qui duyet dinh ke cua x
             strong_connect(g,v);
             //Khi dut lui cap nhat lai min_num cho dinh x(min_num cha < min_num con)
@@ -179,14 +178,11 @@ int main(){
         scanf("%d%d",&u,&v);
         addEdges(&g,u,v);
     }
-    count=0;//Khoi tao bien dem ban dau = 0 - day la bien toan cuc
-
     for(int i=1;i<=n;i++){
-        num[i] = -1;
-        min_num[i] = 0;
+        on_stack[i]=-1;
     }
     for(int i=1;i<=n;i++){
-        if(num[i]==-1){
+        if(on_stack[i]==-1){
             strong_connect(&g,i);
         }
     }
