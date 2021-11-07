@@ -78,119 +78,84 @@ Input	Result
 #include <stdbool.h>
 #define maxv 50
 #define idx 100
+int n,m;
 typedef int Vertices;
-int n,m;//Biến toàn cục lưu số đỉnh và số cung
-
-//Cấu trúc đồ thị
 typedef struct{
     int matrix[maxv][maxv];
-    Vertices n;//Dinh n
+    Vertices n;
 }Graph;
-
-/*Các hàm trên danh sách*/
-
-//Cấu trúc danh sách
 typedef struct{
     int data[idx];
     int size;
 }List;
-
-//Làm rỗng danh sách
 void makenullList(List *l){
     l->size=0;
 }
-
-//Thêm phần tử vào danh sách
 void pushList(List *l, int element){
     l->data[l->size]=element;
     l->size++;
 }
-//Truy cập phần tử trong danh sách
 int getList(List *l, int index){
-    return l->data[index];
+    return l->data[index-1];
 }
-
-//Khởi tạo đồ thị
 void initGraph(Graph *g){
     g->n=n;
-    for(int i=1;i<=n;i++){
-        for(int j=1;j<=n;j++){
+    for(int i=1;i<=n;i++)
+        for(int j=1;j<=n;j++)
             g->matrix[i][j]=0;
-        }
-    }
 }
-
-//Thêm cung e = (x,y) vào đồ thị 
-void addGraph(Graph *g, int x, int y){
+void addEdge(Graph *g, int x, int y){
     g->matrix[x][y]=1;
     g->matrix[y][x]=1;
 }
-
-//Tìm đỉnh láng giềng của 1 đỉnh bất kì trong đồ thị 
+bool adjacent(Graph *g, int x, int y){
+    return g->matrix[x][y]==1;
+}
 List neighbors(Graph *g, int x){
     List L;
     makenullList(&L);
     for(int i=1;i<=n;i++){
-        if(g->matrix[x][i]==1){
+        if(adjacent(g,x,i)){
             pushList(&L,i);
         }
     }
     return L;
 }
-
-int test;//Biến toàn cục để kiểm tra đồ thị có chứa chu trình hay không
-int mark[maxv];//Mảng toàn cục để đánh dấu các phần tử đã duyệt
-
-//Duyệt đồ thị theo chiều sâu đệ qui đồng thời kiểm tra chu trình
+int mark[maxv];
+int key=0;
 void DFS_Recursion(Graph *g, int x, int p){
-
-    if(mark[x]==1) return; //Nếu đỉnh x có trong đồ thị thì kết thúc hàm
-
-    /*Trong trường hợp này thông thường sẽ in ra đỉnh x để biết là đỉnh x đã duyệt
-    nhưng chúng ta sử dụng duyệt sâu để kiểm tra đồ thị có chứa chi trình 
-    hay không nên không cần in đỉnh x ra*/
-
-    //printf("%d\n",x); 
-
-    mark[x]=1; //Đánh dấu x đã duyệt
-    List L =  neighbors(g,x); //Tìm các đỉnh kề v của x và lưu vào danh sách
-    for(int j=0;j<L.size;j++){
-        int v = getList(&L,j); //Lấy đỉnh kề đầu tiên của đỉnh x trong danh sách ra
-        if(v==p) continue; // Nếu đỉnh kề v của x đã bằng đỉnh cha thì bỏ qua
+    mark[x]=1;
+    List L = neighbors(g,x);
+    for(int j=1;j<=L.size;j++){
+        int v = getList(&L,j);
+        if(v==p) continue;
         if(mark[v]==1){
-            test = 1; //Đã tồn tại chu trình
-            return;//Thoát hàm
+            key=1;
+            return;
         }
-        DFS_Recursion(g,v,x);//Nếu không thỏa 2 câu điều kiện trên thì gọi đệ qui
+        DFS_Recursion(g,v,x);
     }
 }
-
-//Hàm kiểm tra và trả về kết quả
-bool check(){
-   return (test==1);//Test bằng 1 --> Đồ thị có tồn tại chu trình
+bool check(Graph *g){
+    for(int i=1;i<=n;i++)
+        mark[i]=0;
+    for(int i=1;i<=n;i++){
+        if(mark[i]==0){
+            DFS_Recursion(g,i,0);
+        }
+    }
+    return key;
 }
 int main(){
     Graph g;
-    int u,v;
     scanf("%d%d",&n,&m);
     initGraph(&g);
+    int u,v;
     for(int i=1;i<=m;i++){
         scanf("%d%d",&u,&v);
-        addGraph(&g,u,v);
+        addEdge(&g,u,v);
     }
-
-    test = 0;//Biến test để kiểm tra đồ thị có chứa chu trình hay không
-
-    //Khởi tạo các phần tử trong mark bằng 0 
-    for(int i=1;i<=n;i++)
-        mark[i]=0;
-
-    //Duyệt tất cả các đỉnh của đồ thị để kiểm tra chu trình
-    for(int i=1;i<=n;i++)
-        DFS_Recursion(&g,i,0);
-    
-    if(check()) printf("YES");
+    if(check(&g)) printf("YES");
     else printf("NO");
-	
     return 0;
 }
