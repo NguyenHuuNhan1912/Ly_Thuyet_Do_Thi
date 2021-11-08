@@ -5,7 +5,7 @@
 + Duyệt đồ thị theo `chiều sâu` sử dụng `hàng đợi` hoặc `đệ qui` thì chúng ta `đã biết` hôm nay chúng ta sẽ tìm hiểu giải thuật `Tarjan`
 # GIẢI THUẬT TARJAN
 + Các biến hỗ trợ
-  + count: Biến count dùng để đếm xem đồ thị có bao nhiêu thành phần liên thông
+  + count: Biến count dùng để đếm xem đồ thị có bao nhiêu thành phần liên thông mạnh
   + k: Bước lặp k của giải thuật
   + on_stack[]: Mảng lưu trạng thái 1 đỉnh đã được đưa vào stack hay chưa
   + num[v]: Mảng num[] lưu chỉ sô của đỉnh v trong quá trình duyệt
