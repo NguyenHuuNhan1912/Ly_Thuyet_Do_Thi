@@ -1,4 +1,4 @@
-# CÁC KHÁI NIỆM `QUAN TRỌNG` TRONG LÝ THUYẾT ĐỒ THỊ
+# CÁC KHÁI NIỆM `QUAN TRỌNG` TRONG LÝ THUYẾT ĐỒ THỊ - GRAPH THEORY
 ## Định nghĩa đồ thị
 >  - `Đồ thị (Graph)` G là một bộ đôi <V,E> trong đó:
 >    + `V`: Tập các đỉnh(Vertex set)
@@ -70,8 +70,6 @@
 * Đồ thị được gọi là `liên thông mạnh`nếu `luôn có đường đi từ đỉnh a đến đỉnh b(với a b là hai đỉnh bất kì)`
 * Đồ thị được gọi là `liên thông mạnh` thì chỉ tồn tại `duy nhất 1` thành phần liên thông
 * Đồ thị được gọi là `liên thông yếu` thì đồ thị `vô hướng nền` của nó `liên thông` -> Khi một đồ thị `liên thông yếu` thì sẽ `có nhiều bộ phận liên thông mạnh`
-
-
  <hr>
  
  *Made by Nguyen Huu Nhan*
