@@ -1,6 +1,7 @@
 # <img src="https://cdn-icons-png.flaticon.com/128/3281/3281319.png" width ="60" heigh="60 "> Lý thuyết đồ thị - CT175<hr>
 ## *Lý thuyết*
 * [Các khái niệm quan trọng](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Ly-Thuyet/Khai-Niem.md)
+* [Các phương pháp duyệt đồ thị](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Ly-Thuyet/Duyet-Do-Thi.md)
 * [Xếp hạng đồ thị và bài tập ví dụ](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Ly-Thuyet/Xep-Hang-Do-Thi.md)
 * [Cây vô hướng](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Ly-Thuyet/Cay-Vo-Huong.md)
 ## *Các cấu trúc dữ liệu cần sử dụng để thực hành*
