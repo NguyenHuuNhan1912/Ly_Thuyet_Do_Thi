@@ -1,8 +1,8 @@
 # DUYỆT ĐỒ THỊ 
 + `Tại sao phải duyệt đồ thị ?` -> Duyệt đồ thị để `kiểm tra tính liên thông` của đồ thị có nghĩa là duyệt để biết được `đồ thị đó có liên thông hay không`
 + `Các giải thuật` duyệt đồ thị được đề cập bên dưới `được sử dụng` để `kiếm tra tính liên thông` của đồ thị `VÔ HƯỚNG`
-+ Còn đối với `ĐỒ THỊ CÓ HƯỚNG` thì chúng ta `KHÔNG THỂ SỬ DỤNG` các giải thuật `duyệt đồ thị` của `vô hướng` được mà phải sử dụng giải thuật `Tarjan`
-+ `Nhưng trong bài này` chúng ta `chỉ duyệt đồ thị` để kiểm tra tính liên thông của đồ thị `VÔ HƯỚNG` còn kiểm tra tính liên thông của đồ thị `CÓ HƯỚNG` [Xem tại đây](nhan.com)
++ Còn đối với `ĐỒ THỊ CÓ HƯỚNG` thì tương đối phức tạp nó được chia thành `liên thông mạnh và liên thông yếu` và muốn kiểm tra thì phải `kết hợp` `giải thuật duyệt sâu đệ qui hoặc không đệ qui` và `giải thuật` `Tarjan` [Xem tại đây](nhan.com)
++ `Nhưng` trong bài hôm nay chúng ta `chỉ đề cập` đến `kiểm tra tính liên thông của` đồ thị `VÔ HƯỚNG` 
 + Ý tưởng:
     + Bắt đầu duyệt từ 1 đỉnh bất kì đánh dấu nó đã duyệt
     + Duyệt các đỉnh kề của nó
