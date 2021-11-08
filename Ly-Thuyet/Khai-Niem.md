@@ -56,11 +56,10 @@
 + `Đỉnh kề`: đỉnh A mà được gọi là `kề` với đỉnh B khi `có đường đi` nối từ A đến B
 + `Đỉnh láng giềng`: Là tập hợp các `đỉnh kề` của đỉnh đang xét
 ## *Đường đi*
-* `Đường đi`: là đường đi từ đỉnh a đến đỉnh b mà các đỉnh `có thể bị lặp lại`
-* `Đường đi đơn`: Là đường đi từ đỉnh a đến đỉnh b mà các đỉnh `không được phép lặp lại`
+* `Đường đi đơn cung`: Là đường đi có các cung khác nhau
+* `Đường đi đơn đỉnh`: Là đường đi có các đỉnh khác nhau
 ## *Chu trình*
-* `Chu trình`: Là đường đi có `đỉnh bắt đầu` giống với `đỉnh kết thúc` và các đỉnh `có thể bị lặp lại`
-* `Chu trình đơn`: Là đường đi `có đỉnh bắt` đầu giống với `đỉnh kết thúc` *NHƯNG* các đỉnh `không được phép lặp lại`
+* `Chu trình`: Là đường đi có `đỉnh bắt đầu` giống với `đỉnh kết thúc` và các đỉnh `không được phép lặp lại`
 ## *Tính liên thông của đơn đồ thị vô hướng*
 * Một đồ thị sẽ có `nhiều` thành phần liên thông
 * Vậy đồ thị được gọi là `liên thông` thì chỉ có `duy nhất 1` thành phần liên thông mà thôi
