@@ -2,6 +2,7 @@
 ## *Lý thuyết*
 * [Các khái niệm quan trọng](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Ly-Thuyet/Khai-Niem.md)
 * [Các phương pháp duyệt đồ thị](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Ly-Thuyet/Duyet-Do-Thi.md)
+* [Tính liên thông mạnh trong đồ thị](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Ly-Thuyet/Kiem-Tra-Lien-Thong-Manh.md)
 * [Xếp hạng đồ thị và bài tập ví dụ](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Ly-Thuyet/Xep-Hang-Do-Thi.md)
 * [Cây vô hướng](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Ly-Thuyet/Cay-Vo-Huong.md)
 ## *Các cấu trúc dữ liệu cần sử dụng để thực hành*
