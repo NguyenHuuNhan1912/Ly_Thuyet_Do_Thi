@@ -107,3 +107,7 @@ void DFS_Recursion(Graph *g, int x){
 + Đánh giá: 
     + Giải thuật `duyệt đệ qui` là giải thuật đơn giản và dễ hiểu
     + Giải thuật duyệt bằng `hàng đợi` và `ngăn xếp` thì tương đồng nhau chỉ `khác nhau` cách cài đặt `ngăn xếp` hay là `hàng đợi` mà thôi
+
+<hr>
+
+*Made by Nguyen Huu Nhan*
