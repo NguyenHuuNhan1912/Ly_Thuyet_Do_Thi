@@ -128,7 +128,7 @@ void Dijkstra(Graph *g, int x){
 			//Nếu v là đỉnh kề của đỉnh x (tức đường đi từ x tới v có trọng số khác 0/NO_EDGE) và mark[v] chưa được duyệt
 			if( v !=  NO_EDGE  && mark[j]==0){ 
 			    int pi_before = pi[j];//pi_before để lưu đường đi ngắn nhất tạm thời trước đó
-				int pi_after = min(pi[j],pi[i]) + g->matrix[i][j]; //pi_after là đường đi ngắn nhất tạm thời vừa mới tính được
+				int pi_after = min(pi[j],pi[i]) + v; //pi_after là đường đi ngắn nhất tạm thời vừa mới tính được
 				//Nếu đường đi ngắn nhất tạm thời sau < đường đi ngắn nhất tạm thời trước đó
 				if(pi_after < pi_before ){
 				    pi[j]=pi_after;//Cập nhật lại đường đi ngắn nhất tạm thời = đường đi ngắn nhất tạm thời vừa tìm được
