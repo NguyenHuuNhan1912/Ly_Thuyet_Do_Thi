@@ -66,4 +66,5 @@ void Dijkstra(Graph *g, int x){
     + Giải thuật `không` có khác biệt khi áp dụng trên đồ thị `vô hướng` hoặc `có hướng` chỉ khác là khác cách `thêm cung`của có hướng hay vô hướng mà thôi
     
  [Xem bài toán cụ thể thể tại đây - CODE](https://github.com/NguyenHuuNhan1912/Ly_Thuyet_Do_Thi/blob/main/Thuc_Hanh/Buoi_3/BT_1.1.c)
+ 
  [Xem bài tập ví dụ ở đây - Giải tay](https://docs.google.com/spreadsheets/d/169EdoSieSgzVjkDSd2mgdUVyNRxbdIvsIHGbSo8-Nn0/edit?usp=sharing)
