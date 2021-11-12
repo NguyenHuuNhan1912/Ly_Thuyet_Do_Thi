@@ -2,7 +2,7 @@
 + Nếu như ở đồ thị `vô hướng` muốn `kiểm tra tính liên thông` thì chỉ cần `áp dụng` các giải thuật `duyệt đồ thị(duyệt sâu, duyệt rộng)`
 + Còn ở đồ thị `có hướng` thì chúng ta phải `kiểm tra đồ thị đó` có `liên thông mạnh` hay không nên chúng ta `phải kết hợp` cả `2 giải thuật` mới có thể kiếm tra được
 + Kiểm tra tính `liên thông mạnh` = Duyệt đồ thị `theo chiều sâu(stack or recursion)` + `Tarjan`
-+ Duyệt đồ thị theo `chiều sâu` sử dụng `hàng đợi` hoặc `đệ qui` thì chúng ta `đã biết` hôm nay chúng ta sẽ tìm hiểu giải thuật `Tarjan`
++ Duyệt đồ thị theo `chiều sâu` sử dụng `ngăn xếp` hoặc `đệ qui` thì chúng ta `đã biết` hôm nay chúng ta sẽ tìm hiểu giải thuật `Tarjan`
 # GIẢI THUẬT TARJAN
 + Các biến hỗ trợ
   + count: Biến count dùng để đếm xem đồ thị có bao nhiêu thành phần liên thông mạnh
