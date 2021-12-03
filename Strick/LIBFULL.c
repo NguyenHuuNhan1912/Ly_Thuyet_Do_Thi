@@ -57,7 +57,7 @@ void makenullStack(Stack *s){
 	s->size=0;
 }
 bool emptyStack(Stack *s){
-	s->size==0;
+	return s->size==0;
 }
 void pushStack(Stack *s, int element){
 	s->data[s->size]=element;
