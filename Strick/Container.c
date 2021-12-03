@@ -6,7 +6,7 @@ int n,m;
 
 typedef int Vertices;
 typedef struct{
-    int a[maxv][maxv];
+    int matrix[maxv][maxv];
     Vertices n;    
 }Graph;
 
@@ -14,16 +14,16 @@ void initGraph(Graph *g){
     g->n=n;
     for(int i=1;i<=n;i++)
         for(int j=1;j<=n;j++)
-            g->a[i][j]=0;
+            g->matrix[i][j]=0;
 }
 
 void addEdge(Graph *g, int x, int y){
-    g->a[x][y]=1;
-    g->a[y][x]=1;
+    g->matrix[x][y]=1;
+    g->matrix[y][x]=1;
 }
 
 bool adjacent(Graph *g, int x, int y){
-    return g->a[x][y]==1;
+    return g->matrix[x][y]==1;
 }
 int degree_Input(Graph *g, int x){
     int count=0;
